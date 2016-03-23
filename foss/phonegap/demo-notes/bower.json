@@ -1,0 +1,11 @@
+{
+  "name": "gr.aueb.cs.foss.notes",
+  "description": "A sample notes application for the FOSS PhoneGap presentation.",
+  "version": "0.0.1",
+  "homepage": "",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "angular": "1.5.2"
+  }
+}
