@@ -1,0 +1,14 @@
+
+<div class="noteList" ng-controller="noteListController">
+    <div class="toolbar">
+        <a class="buttonNew" href="#/notes/new">New note...</a>
+    </div>
+    
+    <div class="noteContainer">
+        <div ng-repeat="note in notes"
+            class="note">
+           <p>{{ note.title }}</p>
+           <span>{{ note.text }}</span>
+       </div>
+    </div>
+</div>
