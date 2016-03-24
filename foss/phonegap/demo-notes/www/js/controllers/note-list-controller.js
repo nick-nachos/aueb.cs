@@ -4,9 +4,13 @@
 
     angular.module('gr.aueb.cs.foss.notes.controllers').controller('noteListController', [
         
-        '$scope', 'noteDataService', 'messageBox',
+        '$scope', '$location', 'noteDataService', 'messageBox',
         
-        function($scope, noteDataService, messageBox) {
+        function($scope, $location, noteDataService, messageBox) {
+            
+            $scope.editNote = function(note) {
+                $location.url('/notes/' + note.id);
+            };
             
             $scope.onGetNotesSuccess = function(notes) {
                 $scope.notes = notes;

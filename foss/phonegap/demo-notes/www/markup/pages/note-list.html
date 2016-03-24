@@ -6,7 +6,7 @@
     
     <div class="noteContainer">
         <div ng-repeat="note in notes"
-            class="note">
+             class="note" ng-click="editNote(note)">
            <p>{{ note.title }}</p>
            <span>{{ note.text }}</span>
        </div>
