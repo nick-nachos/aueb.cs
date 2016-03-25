@@ -19,13 +19,25 @@ div.noteContainer {
 div.noteContainer div.note {
     float: left;
     display: table-cell;
+    
     margin: 5px;
-    width: 45%;
-    max-width: 200px;
+    padding: 3px;
     border: 1px solid gainsboro;
     border-radius: 5px;
-    padding: 3px;
+    
+    width: 45%;
+    min-height: 130px;
+    max-height: 250px;
+    
+    overflow: hidden;
 }
+
+div.noteContainer div.note div.title {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
 /*
 @media (orientation: landscape) {
     

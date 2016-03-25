@@ -7,8 +7,8 @@
     <div class="noteContainer">
         <div ng-repeat="note in notes"
              class="note" ng-click="editNote(note)">
-           <p>{{ note.title }}</p>
-           <span>{{ note.text }}</span>
+           <div class="title">{{ note.title }}</div>
+           <div class="text">{{ note.text }}</div>
        </div>
     </div>
 </div>
