@@ -50,6 +50,16 @@
                 return match;
             };
             
+            ArrayUtil.prototype.range = function(from, length) {
+                var array = new Array(length);
+                
+                for (var i = 0; i < length; i++) {
+                    array[i] = from + i;
+                }
+                
+                return array;
+            };
+            
             return new ArrayUtil();
         }
     ]);

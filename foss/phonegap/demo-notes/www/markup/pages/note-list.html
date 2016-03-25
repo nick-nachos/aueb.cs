@@ -5,10 +5,13 @@
     </div>
     
     <div class="noteContainer">
-        <div ng-repeat="note in notes"
-             class="note" ng-click="editNote(note)">
-           <div class="title">{{ note.title }}</div>
-           <div class="text">{{ note.text }}</div>
-       </div>
+        <div class="noteColumn" ng-repeat="noteColumn in noteColumns">
+            <div class="note" ng-repeat="note in notes track by $index" 
+                 ng-if="containsNote($index, noteColumn)"
+                 ng-click="editNote(note)">
+                <div class="title">{{ note.title }}</div>
+                <div class="text">{{ note.text }}</div>
+            </div>
+        </div>
     </div>
 </div>

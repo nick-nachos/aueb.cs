@@ -4,12 +4,16 @@
 
     angular.module('gr.aueb.cs.foss.notes.controllers').controller('noteListController', [
         
-        '$scope', '$location', 'noteDataService', 'messageBox',
+        '$scope', '$location', 'noteDataService', 'messageBox', 'orientation', 'arrayUtil',
         
-        function($scope, $location, noteDataService, messageBox) {
+        function($scope, $location, noteDataService, messageBox, orientation, arrayUtil) {
             
             $scope.editNote = function(note) {
                 $location.url('/notes/' + note.id);
+            };
+            
+            $scope.containsNote = function(noteIndex, noteColumn) {
+                return noteIndex % $scope.noteColumns.length === noteColumn;
             };
             
             $scope.onGetNotesSuccess = function(notes) {
@@ -20,7 +24,18 @@
                 messageBox.alert('Failed to fetch list of notes. please try again later!');
             };
             
+            $scope.onOrientationChange = function() {
+                if (orientation.landscape) {
+                    $scope.noteColumns = arrayUtil.range(0, 3);
+                }
+                else {
+                    $scope.noteColumns = arrayUtil.range(0, 2);
+                }
+            };
+            
             noteDataService.getNotes().then($scope.onGetNotesSuccess, $scope.onGetNotesError);
+            $scope.onOrientationChange();
+            orientation.addOrientationListener($scope.onOrientationChange);
         }
     ]);
     

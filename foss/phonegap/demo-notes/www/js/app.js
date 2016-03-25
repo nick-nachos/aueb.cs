@@ -13,7 +13,9 @@
         moduleUtil.name
     ]);
     
-    var moduleServicesUI = angular.module('gr.aueb.cs.foss.notes.services.ui', []);
+    var moduleServicesUI = angular.module('gr.aueb.cs.foss.notes.services.ui', [
+        moduleUtil.name
+    ]);
     
     var moduleControllers = angular.module('gr.aueb.cs.foss.notes.controllers', [
         moduleServicesData.name,

@@ -10,40 +10,48 @@ div.page {
     height: 100%;
 }
 
+/* note list */
+
 div.noteContainer {
     display: table;
     width: 100%;
     height: 100%;
 }
 
-div.noteContainer div.note {
+div.noteContainer > div.noteColumn {
     float: left;
-    display: table-cell;
-    
+}
+
+div.noteContainer > div.noteColumn > div.note {
     margin: 5px;
     padding: 3px;
     border: 1px solid gainsboro;
     border-radius: 5px;
     
-    width: 45%;
     min-height: 130px;
     max-height: 250px;
     
     overflow: hidden;
 }
 
-div.noteContainer div.note div.title {
+div.noteContainer > div.noteColumn > div.note > div.title {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
 }
 
-/*
 @media (orientation: landscape) {
     
-    div.noteContainer div.note {
-        width: 45%;
+    div.noteContainer > div.noteColumn {
+        width: 33.33%;
     }
     
 }
-*/
+
+@media (orientation: portrait) {
+    
+    div.noteContainer > div.noteColumn {
+        width: 50%;
+    }
+    
+}

@@ -4,9 +4,9 @@
     
     angular.module('gr.aueb.cs.foss.notes.services.ui').factory('orientation', [
         
-        '$window', '$rootScope',
+        '$window', '$rootScope', 'objectUtil',
         
-        function($window, $rootScope) {
+        function($window, $rootScope, objectUtil) {
             function Orientation() {
                 this._applyOrientation();
                 var that = this;
@@ -22,6 +22,12 @@
             };
             
             Orientation.prototype._applyOrientation = function() {
+                // if desktop browser
+                if (objectUtil.isNull($window.orientation)) {
+                    this._portrait = false;
+                    return;
+                }
+                
                 switch ($window.orientation) {
                     case 90:
                     case -90:
