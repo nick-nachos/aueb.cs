@@ -12,8 +12,8 @@
                 $location.url('/notes/' + note.id);
             };
             
-            $scope.containsNote = function(noteIndex, noteColumn) {
-                return noteIndex % $scope.noteColumns.length === noteColumn;
+            $scope.containsNote = function(noteIndex, noteColumnIndex) {
+                return noteIndex % $scope.noteColumnIndices.length === noteColumnIndex;
             };
             
             $scope.onGetNotesSuccess = function(notes) {
@@ -26,10 +26,10 @@
             
             $scope.onOrientationChange = function() {
                 if (orientation.landscape) {
-                    $scope.noteColumns = arrayUtil.range(0, 3);
+                    $scope.noteColumnIndices = arrayUtil.range(0, 3);
                 }
                 else {
-                    $scope.noteColumns = arrayUtil.range(0, 2);
+                    $scope.noteColumnIndices = arrayUtil.range(0, 2);
                 }
             };
             

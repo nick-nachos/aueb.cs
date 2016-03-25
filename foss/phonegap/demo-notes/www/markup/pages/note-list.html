@@ -5,9 +5,9 @@
     </div>
     
     <div class="noteContainer">
-        <div class="noteColumn" ng-repeat="noteColumn in noteColumns">
+        <div class="noteColumn" ng-repeat="noteColumnIndex in noteColumnIndices">
             <div class="note" ng-repeat="note in notes track by $index" 
-                 ng-if="containsNote($index, noteColumn)"
+                 ng-if="containsNote($index, noteColumnIndex)"
                  ng-click="editNote(note)">
                 <div class="title">{{ note.title }}</div>
                 <div class="text">{{ note.text }}</div>
