@@ -25,12 +25,8 @@
             };
             
             $scope.onOrientationChange = function() {
-                if (orientation.landscape) {
-                    $scope.noteColumnIndices = arrayUtil.range(0, 3);
-                }
-                else {
-                    $scope.noteColumnIndices = arrayUtil.range(0, 2);
-                }
+                var noteColumnCount = orientation.landscape ? 3 : 2;
+                $scope.noteColumnIndices = arrayUtil.range(0, noteColumnCount);
             };
             
             noteDataService.getNotes().then($scope.onGetNotesSuccess, $scope.onGetNotesError);
