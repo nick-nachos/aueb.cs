@@ -14,6 +14,7 @@
             
             $scope.deactivateSearchBar = function() {
                 $scope.searchBarActive = false;
+                delete $scope.searchText;
             };
             
             $scope.toggleListType = function() {
@@ -51,6 +52,7 @@
             };
             
             $scope.mosaicDisplay = userPreferences.isNoteViewMosaic();
+            //$scope.search = { text: null };
             $scope.loadNotes();
             $scope.onOrientationChange();
             orientation.addOrientationListener($scope.onOrientationChange);

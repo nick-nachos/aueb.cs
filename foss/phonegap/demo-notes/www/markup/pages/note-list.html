@@ -15,14 +15,14 @@
         <div>
             <div class="back" ng-click="deactivateSearchBar()"></div>
             <div class="input">
-                <input type="text" placeholder="Search notes">
+                <input type="text" placeholder="Search notes" ng-model="$parent.searchText">
             </div>
         </div>
     </div>
     
     <div class="noteContainer mosaic" ng-if="mosaicDisplay">
         <div class="noteColumn dismissContainer" ng-repeat="noteColumnIndex in noteColumnIndices">
-            <div class="note" ng-repeat="note in notes track by $index" 
+            <div class="note" ng-repeat="note in notes | filter:searchText track by $index" 
                  ng-if="containsNote(note, $index, noteColumnIndex)"
                  data-touch="editNote(note)" data-drag-to-dismiss="deleteNote(note)">
                 <div class="title">{{ note.title }}</div>
@@ -32,7 +32,7 @@
     </div>
     
     <div class="noteContainer listView" ng-if="!mosaicDisplay">
-        <div class="note" ng-repeat="note in notes track by $index"
+        <div class="note" ng-repeat="note in notes | filter:searchText"
              data-touch="editNote(note)" data-drag-to-dismiss="deleteNote(note)">
             <div class="title">{{ note.title }}</div>
             <div class="text">{{ note.text }}</div>
