@@ -116,7 +116,9 @@
             };
             
             NoteRepository.prototype._deleteNoteById = function(notes, noteId) {
-                var noteIndex = arrayUtil.indexOfMatch(notes, noteId);
+                var noteIndex = arrayUtil.indexOfMatch(notes, function(note) {
+                    return note.id == noteId;
+                });
                 
                 if (noteIndex > -1) {
                     notes.splice(noteIndex, 1);

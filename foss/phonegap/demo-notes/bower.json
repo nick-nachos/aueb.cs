@@ -7,6 +7,7 @@
   "private": true,
   "dependencies": {
     "angular": "1.5.2",
-    "angular-route": "1.5.2"
+    "angular-route": "1.5.2",
+    "mobile-angular-ui": "1.2.x"
   }
 }

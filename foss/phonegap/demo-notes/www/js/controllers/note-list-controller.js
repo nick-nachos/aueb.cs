@@ -12,8 +12,16 @@
                 $location.url('/notes/' + note.id);
             };
             
-            $scope.containsNote = function(noteIndex, noteColumnIndex) {
+            $scope.deleteNote = function(note) {
+                noteDataService.deleteNoteById(note.id).then($scope.loadNotes);
+            };
+            
+            $scope.containsNote = function(note, noteIndex, noteColumnIndex) {
                 return noteIndex % $scope.noteColumnIndices.length === noteColumnIndex;
+            };
+            
+            $scope.loadNotes = function() {
+                noteDataService.getNotes().then($scope.onGetNotesSuccess, $scope.onGetNotesError);
             };
             
             $scope.onGetNotesSuccess = function(notes) {
@@ -29,7 +37,7 @@
                 $scope.noteColumnIndices = arrayUtil.range(0, noteColumnCount);
             };
             
-            noteDataService.getNotes().then($scope.onGetNotesSuccess, $scope.onGetNotesError);
+            $scope.loadNotes();
             $scope.onOrientationChange();
             orientation.addOrientationListener($scope.onOrientationChange);
         }

@@ -5,10 +5,10 @@
     </div>
     
     <div class="noteContainer">
-        <div class="noteColumn" ng-repeat="noteColumnIndex in noteColumnIndices">
+        <div class="noteColumn dismissContainer" ng-repeat="noteColumnIndex in noteColumnIndices">
             <div class="note" ng-repeat="note in notes track by $index" 
-                 ng-if="containsNote($index, noteColumnIndex)"
-                 ng-click="editNote(note)">
+                 ng-if="containsNote(note, $index, noteColumnIndex)"
+                 data-touch="editNote(note)" data-drag-to-dismiss="deleteNote(note)">
                 <div class="title">{{ note.title }}</div>
                 <div class="text">{{ note.text }}</div>
             </div>

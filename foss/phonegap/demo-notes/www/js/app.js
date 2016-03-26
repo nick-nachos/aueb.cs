@@ -17,6 +17,10 @@
         moduleUtil.name
     ]);
     
+    var moduleDirectivesGestures = angular.module('gr.aueb.cs.foss.notes.directives.gestures', [
+        'mobile-angular-ui.gestures'
+    ]);
+    
     var moduleControllers = angular.module('gr.aueb.cs.foss.notes.controllers', [
         moduleServicesData.name,
         moduleServicesUI.name
@@ -24,7 +28,9 @@
     
     var app = angular.module('gr.aueb.cs.foss.notes', [
         'ngRoute',
-        moduleControllers.name
+        'mobile-angular-ui.gestures',
+        moduleControllers.name,
+        moduleDirectivesGestures.name
     ]);
     
     app.config([
