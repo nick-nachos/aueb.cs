@@ -8,6 +8,14 @@
         
         function($scope, $location, noteDataService, userPreferences, messageBox, orientation, arrayUtil) {
             
+            $scope.activateSearchBar = function() {
+                $scope.searchBarActive = true;
+            };
+            
+            $scope.deactivateSearchBar = function() {
+                $scope.searchBarActive = false;
+            };
+            
             $scope.toggleListType = function() {
                 $scope.mosaicDisplay = !$scope.mosaicDisplay;
                 userPreferences.setNoteViewMosaic($scope.mosaicDisplay);

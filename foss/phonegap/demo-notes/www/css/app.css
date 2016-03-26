@@ -36,7 +36,7 @@ div.noteList > div.appBar > div.appTools {
     width: 30%;
 }
 
-div.noteList > div.appBar > div.appTools div.toggleListType {
+div.noteList > div.appBar > div.appTools > div > div {
     display: table-cell;
     width: 48px;
     height: 30px;
@@ -45,12 +45,58 @@ div.noteList > div.appBar > div.appTools div.toggleListType {
     background-repeat: no-repeat;
 }
 
-div.noteList > div.appBar > div.appTools div.toggleListType.toListView {
+div.noteList > div.appBar > div.appTools > div > div.buttonSearch {
+    background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+Cjxzdmcgd2lkdGg9IjE4cHgiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgZmlsbD0iIzAwMDAwMCIgdmlld0JveD0iMCAwIDQ4IDQ4IiBoZWlnaHQ9IjE4cHgiPgogIDxwYXRoIGQ9Im0zMSAyOGgtMS41OWwtMC41NS0wLjU1YzEuOTYtMi4yNyAzLjE0LTUuMjIgMy4xNC04LjQ1IDAtNy4xOC01LjgyLTEzLTEzLTEzcy0xMyA1LjgyLTEzIDEzIDUuODIgMTMgMTMgMTNjMy4yMyAwIDYuMTgtMS4xOCA4LjQ1LTMuMTNsMC41NSAwLjU1djEuNThsMTAgOS45OCAyLjk4LTIuOTgtOS45OC0xMHptLTEyIDBjLTQuOTcgMC05LTQuMDMtOS05czQuMDMtOSA5LTkgOSA0LjAzIDkgOS00LjAzIDktOSA5eiIvPgogIDxwYXRoIGQ9Im0wIDBoNDh2NDhoLTQ4eiIgZmlsbD0ibm9uZSIvPgo8L3N2Zz4K);
+}
+
+div.noteList > div.appBar > div.appTools > div > div.toggleListType.toListView {
     background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+CjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAxOC4wLjAsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4KPCFET0NUWVBFIHN2ZyAgUFVCTElDICctLy9XM0MvL0RURCBTVkcgMS4xLy9FTicgICdodHRwOi8vd3d3LnczLm9yZy9HcmFwaGljcy9TVkcvMS4xL0RURC9zdmcxMS5kdGQnPgo8c3ZnIGlkPSJMYXllcl8xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbDpzcGFjZT0icHJlc2VydmUiIHZpZXdCb3g9IjAgMCAyMCAyMCIgdmVyc2lvbj0iMS4xIiB5PSIwcHgiIHg9IjBweCIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDIwIDIwIj4KCQk8cGF0aCBkPSJtMSAxNmgxOHYtNmgtMTh2NnptMC0xM3Y2aDE4di02aC0xOHoiLz4KPC9zdmc+Cg==);
 }
 
-div.noteList > div.appBar > div.appTools div.toggleListType.toMosaic {
+div.noteList > div.appBar > div.appTools > div > div.toggleListType.toMosaic {
     background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+CjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAxOC4wLjAsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4KPCFET0NUWVBFIHN2ZyAgUFVCTElDICctLy9XM0MvL0RURCBTVkcgMS4xLy9FTicgICdodHRwOi8vd3d3LnczLm9yZy9HcmFwaGljcy9TVkcvMS4xL0RURC9zdmcxMS5kdGQnPgo8c3ZnIGlkPSJMYXllcl8xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbDpzcGFjZT0icHJlc2VydmUiIHZpZXdCb3g9IjAgMCAyMCAyMCIgdmVyc2lvbj0iMS4xIiB5PSIwcHgiIHg9IjBweCIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDIwIDIwIj4KCTxyZWN0IHk9IjMiIHdpZHRoPSI2IiBoZWlnaHQ9IjE0Ii8+Cgk8cmVjdCB5PSIzIiB4PSI3IiBoZWlnaHQ9IjUiIHdpZHRoPSI2Ii8+Cgk8cmVjdCB5PSI5IiB4PSI3IiBoZWlnaHQ9IjgiIHdpZHRoPSI2Ii8+Cgk8cmVjdCB5PSIxMyIgeD0iMTQiIGhlaWdodD0iNCIgd2lkdGg9IjYiLz4KCTxyZWN0IHk9IjMiIHg9IjE0IiBoZWlnaHQ9IjkiIHdpZHRoPSI2Ii8+Cjwvc3ZnPgo=);
+}
+
+div.noteList > div.searchBar {
+    z-index: 10;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    height: 40px;
+    display: table;
+    width: 100%;
+    background-color: white;
+}
+
+div.noteList > div.searchBar > div {
+    display: table;
+    margin: 5px;
+    width: calc(100% - 20px);
+}
+
+div.noteList > div.searchBar > div > div {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+div.noteList > div.searchBar > div > div.back {
+    height: 30px;
+    width: 30px;
+    background-position: center;
+    background-size: 20px 20px;
+    background-repeat: no-repeat;
+    background-image: url(../img/navigation/ic_arrow_back_24px.svg);
+}
+
+div.noteList > div.searchBar > div > div.input {
+    width: calc(100% - 30px);
+}
+
+div.noteList > div.searchBar > div > div.input > input {
+    width: calc(100% - 15px);
+    margin-left: 5px;
+    margin-right: 7px; 
 }
 
 div.noteList > div.toolbar {

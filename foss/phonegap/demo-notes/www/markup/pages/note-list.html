@@ -5,7 +5,17 @@
         <div class="appName">Notes</div>
         <div class="appTools">
             <div style="float: right">
+                <div class="buttonSearch" ng-click="activateSearchBar()"></div>
                 <div class="toggleListType {{ mosaicDisplay ? 'toListView' : 'toMosaic' }}" ng-click="toggleListType()"></div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="searchBar" ng-if="searchBarActive">
+        <div>
+            <div class="back" ng-click="deactivateSearchBar()"></div>
+            <div class="input">
+                <input type="text" placeholder="Search notes">
             </div>
         </div>
     </div>
