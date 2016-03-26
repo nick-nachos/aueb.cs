@@ -8,6 +8,10 @@
         
         function($scope, $location, noteDataService, messageBox, orientation, arrayUtil) {
             
+            $scope.toggleListType = function() {
+                $scope.mosaicDisplay = !$scope.mosaicDisplay;
+            };
+            
             $scope.editNote = function(note) {
                 $location.url('/notes/' + note.id);
             };
@@ -37,6 +41,7 @@
                 $scope.noteColumnIndices = arrayUtil.range(0, noteColumnCount);
             };
             
+            $scope.mosaicDisplay = true;
             $scope.loadNotes();
             $scope.onOrientationChange();
             orientation.addOrientationListener($scope.onOrientationChange);

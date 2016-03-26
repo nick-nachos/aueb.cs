@@ -1,7 +1,13 @@
 
 <div class="noteList" ng-controller="noteListController">
-    <div class="toolbar">
-        <a class="buttonNew" href="#/notes/new">New note...</a>
+    
+    <div class="appBar">
+        <div class="appName">Notes</div>
+        <div class="appTools">
+            <div style="float: right">
+                <div class="toggleListType {{ mosaicDisplay ? 'toListView' : 'toMosaic' }}" ng-click="toggleListType()"></div>
+            </div>
+        </div>
     </div>
     
     <div class="noteContainer">
@@ -14,4 +20,11 @@
             </div>
         </div>
     </div>
+    
+    <div class="toolbar">
+        <div class="buttonNew">
+            <a href="#/notes/new">New note...</a>
+        </div>
+    </div>
+    
 </div>

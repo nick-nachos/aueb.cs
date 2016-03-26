@@ -12,18 +12,82 @@ div.page {
 
 /* note list */
 
-div.noteContainer {
+div.noteList > div.appBar {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    display: table;
+    height: 40px;
+    width: 100%;
+}
+
+div.noteList > div.appBar > div {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+div.noteList > div.appBar > div.appName {
+    width: 30%;
+    padding-left: 10px;
+}
+
+div.noteList > div.appBar > div.appTools {
+    width: 30%;
+}
+
+div.noteList > div.appBar > div.appTools div.toggleListType {
+    display: table-cell;
+    width: 48px;
+    height: 30px;
+    background-position: center;
+    background-size: 20px 20px;
+    background-repeat: no-repeat;
+}
+
+div.noteList > div.appBar > div.appTools div.toggleListType.toListView {
+    background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+CjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAxOC4wLjAsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4KPCFET0NUWVBFIHN2ZyAgUFVCTElDICctLy9XM0MvL0RURCBTVkcgMS4xLy9FTicgICdodHRwOi8vd3d3LnczLm9yZy9HcmFwaGljcy9TVkcvMS4xL0RURC9zdmcxMS5kdGQnPgo8c3ZnIGlkPSJMYXllcl8xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbDpzcGFjZT0icHJlc2VydmUiIHZpZXdCb3g9IjAgMCAyMCAyMCIgdmVyc2lvbj0iMS4xIiB5PSIwcHgiIHg9IjBweCIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDIwIDIwIj4KCQk8cGF0aCBkPSJtMSAxNmgxOHYtNmgtMTh2NnptMC0xM3Y2aDE4di02aC0xOHoiLz4KPC9zdmc+Cg==);
+}
+
+div.noteList > div.appBar > div.appTools div.toggleListType.toMosaic {
+    background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+CjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAxOC4wLjAsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4KPCFET0NUWVBFIHN2ZyAgUFVCTElDICctLy9XM0MvL0RURCBTVkcgMS4xLy9FTicgICdodHRwOi8vd3d3LnczLm9yZy9HcmFwaGljcy9TVkcvMS4xL0RURC9zdmcxMS5kdGQnPgo8c3ZnIGlkPSJMYXllcl8xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbDpzcGFjZT0icHJlc2VydmUiIHZpZXdCb3g9IjAgMCAyMCAyMCIgdmVyc2lvbj0iMS4xIiB5PSIwcHgiIHg9IjBweCIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDIwIDIwIj4KCTxyZWN0IHk9IjMiIHdpZHRoPSI2IiBoZWlnaHQ9IjE0Ii8+Cgk8cmVjdCB5PSIzIiB4PSI3IiBoZWlnaHQ9IjUiIHdpZHRoPSI2Ii8+Cgk8cmVjdCB5PSI5IiB4PSI3IiBoZWlnaHQ9IjgiIHdpZHRoPSI2Ii8+Cgk8cmVjdCB5PSIxMyIgeD0iMTQiIGhlaWdodD0iNCIgd2lkdGg9IjYiLz4KCTxyZWN0IHk9IjMiIHg9IjE0IiBoZWlnaHQ9IjkiIHdpZHRoPSI2Ii8+Cjwvc3ZnPgo=);
+}
+
+div.noteList > div.toolbar {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    height: 30px;
     display: table;
     width: 100%;
-    height: 100%;
+    padding-left: 10px;
+}
+
+div.noteList > div.toolbar > div {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+div.noteList > div.toolbar > div.buttonNew > a {
+    color: gray;
+    text-decoration: none;
+}
+
+div.noteList > div.noteContainer {
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    top: 40px;
+    bottom: 30px;
     overflow-y: auto;
 }
 
-div.noteContainer > div.noteColumn {
+div.noteList > div.noteContainer > div.noteColumn {
     float: left;
 }
 
-div.noteContainer > div.noteColumn > div.note {
+div.noteList > div.noteContainer > div.noteColumn > div.note {
     margin: 5px;
     padding: 3px;
     border: 1px solid gainsboro;
@@ -35,7 +99,7 @@ div.noteContainer > div.noteColumn > div.note {
     overflow: hidden;
 }
 
-div.noteContainer > div.noteColumn > div.note > div.title {
+div.noteList > div.noteContainer > div.noteColumn > div.note > div.title {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -43,7 +107,7 @@ div.noteContainer > div.noteColumn > div.note > div.title {
 
 @media (orientation: landscape) {
     
-    div.noteContainer > div.noteColumn {
+    div.noteList > div.noteContainer > div.noteColumn {
         width: 33.33%;
     }
     
@@ -51,8 +115,26 @@ div.noteContainer > div.noteColumn > div.note > div.title {
 
 @media (orientation: portrait) {
     
-    div.noteContainer > div.noteColumn {
+    div.noteList > div.noteContainer > div.noteColumn {
         width: 50%;
     }
     
+}
+
+/* note editor */
+
+div.noteEditor > div.toolbar {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    height: 30px;
+}
+
+div.noteEditor > div.workArea {
+    position: absolute;
+    top: 30px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
 }
