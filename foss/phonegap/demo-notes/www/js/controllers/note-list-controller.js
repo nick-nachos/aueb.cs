@@ -4,12 +4,13 @@
 
     angular.module('gr.aueb.cs.foss.notes.controllers').controller('noteListController', [
         
-        '$scope', '$location', 'noteDataService', 'messageBox', 'orientation', 'arrayUtil',
+        '$scope', '$location', 'noteDataService', 'userPreferences', 'messageBox', 'orientation', 'arrayUtil',
         
-        function($scope, $location, noteDataService, messageBox, orientation, arrayUtil) {
+        function($scope, $location, noteDataService, userPreferences, messageBox, orientation, arrayUtil) {
             
             $scope.toggleListType = function() {
                 $scope.mosaicDisplay = !$scope.mosaicDisplay;
+                userPreferences.setNoteViewMosaic($scope.mosaicDisplay);
             };
             
             $scope.editNote = function(note) {
@@ -41,7 +42,7 @@
                 $scope.noteColumnIndices = arrayUtil.range(0, noteColumnCount);
             };
             
-            $scope.mosaicDisplay = true;
+            $scope.mosaicDisplay = userPreferences.isNoteViewMosaic();
             $scope.loadNotes();
             $scope.onOrientationChange();
             orientation.addOrientationListener($scope.onOrientationChange);

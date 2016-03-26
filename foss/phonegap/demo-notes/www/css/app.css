@@ -83,11 +83,7 @@ div.noteList > div.noteContainer {
     overflow-y: auto;
 }
 
-div.noteList > div.noteContainer > div.noteColumn {
-    float: left;
-}
-
-div.noteList > div.noteContainer > div.noteColumn > div.note {
+div.noteList > div.noteContainer  div.note {
     margin: 5px;
     padding: 3px;
     border: 1px solid gainsboro;
@@ -99,7 +95,11 @@ div.noteList > div.noteContainer > div.noteColumn > div.note {
     overflow: hidden;
 }
 
-div.noteList > div.noteContainer > div.noteColumn > div.note > div.title {
+div.noteList > div.noteContainer.mosaic > div.noteColumn {
+    float: left;
+}
+
+div.noteList > div.noteContainer.mosaic > div.noteColumn > div.note > div.title {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -107,7 +107,7 @@ div.noteList > div.noteContainer > div.noteColumn > div.note > div.title {
 
 @media (orientation: landscape) {
     
-    div.noteList > div.noteContainer > div.noteColumn {
+    div.noteList > div.noteContainer.mosaic > div.noteColumn {
         width: 33.33%;
     }
     
@@ -115,7 +115,7 @@ div.noteList > div.noteContainer > div.noteColumn > div.note > div.title {
 
 @media (orientation: portrait) {
     
-    div.noteList > div.noteContainer > div.noteColumn {
+    div.noteList > div.noteContainer.mosaic > div.noteColumn {
         width: 50%;
     }
     
