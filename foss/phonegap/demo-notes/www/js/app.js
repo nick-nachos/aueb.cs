@@ -8,6 +8,10 @@
         moduleUtil.name
     ]);
     
+    var moduleServicesInfrastructure = angular.module('gr.aueb.cs.foss.notes.services.infrastructure', [
+        moduleUtil.name
+    ]);
+    
     var moduleDal = angular.module('gr.aueb.cs.foss.notes.dal', [
         moduleUtil.name
     ]);
@@ -29,7 +33,8 @@
         moduleUtil.name,
         moduleHelper.name,
         moduleServicesData.name,
-        moduleServicesUI.name
+        moduleServicesUI.name,
+        moduleServicesInfrastructure.name
     ]);
     
     var app = angular.module('gr.aueb.cs.foss.notes', [

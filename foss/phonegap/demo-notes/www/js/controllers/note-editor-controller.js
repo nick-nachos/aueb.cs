@@ -4,9 +4,9 @@
 
     angular.module('gr.aueb.cs.foss.notes.controllers').controller('noteEditorController', [
         
-        '$scope', '$routeParams', '$location', 'noteDataService', 'messageBox', 'noteHelper', 'objectUtil',
+        '$scope', '$routeParams', '$location', 'noteDataService', 'messageBox', 'noteHelper', 'appNavigator', 'objectUtil',
         
-        function($scope, $routeParams, $location, noteDataService, messageBox, noteHelper, objectUtil) {
+        function($scope, $routeParams, $location, noteDataService, messageBox, noteHelper, appNavigator, objectUtil) {
             
             $scope.onGetNoteSuccess = function(note) {
                 $scope.note = note;
@@ -35,6 +35,8 @@
             $scope.isNewNote = function() {
                 return objectUtil.isNull($routeParams.noteId);
             };
+            
+            appNavigator.setBackAction($scope.close);
             
             if ($scope.isNewNote()) {
                 $scope.onGetNoteSuccess({

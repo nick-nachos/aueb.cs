@@ -4,9 +4,9 @@
 
     angular.module('gr.aueb.cs.foss.notes.controllers').controller('noteListController', [
         
-        '$scope', '$location', 'noteDataService', 'userPreferences', 'messageBox', 'orientation', 'arrayUtil',
+        '$scope', '$location', 'noteDataService', 'userPreferences', 'messageBox', 'orientation', 'appNavigator', 'arrayUtil',
         
-        function($scope, $location, noteDataService, userPreferences, messageBox, orientation, arrayUtil) {
+        function($scope, $location, noteDataService, userPreferences, messageBox, orientation, appNavigator, arrayUtil) {
             
             $scope.activateSearchBar = function() {
                 $scope.searchBarActive = true;
@@ -51,6 +51,7 @@
                 $scope.noteColumnIndices = arrayUtil.range(0, noteColumnCount);
             };
             
+            appNavigator.setBackAction(angular.noop, true);
             $scope.mosaicDisplay = userPreferences.isNoteViewMosaic();
             //$scope.search = { text: null };
             $scope.loadNotes();
