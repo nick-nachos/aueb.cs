@@ -1,13 +1,18 @@
 
 <div class="noteEditor">
     
-    <div class="toolbar">
+    <div class="toolbar" style="background-color: {{ getNoteColor(note) }};">
         <div class="section left">
             <div class="tool icon back" ng-click="close()"></div>
         </div>
+        <div class="section right">
+            <div class="rightAligner">
+                <div class="tool icon buttonColorPicker" data-ui-turn-on="colorPickerState"></div>
+            </div>
+        </div>
     </div>
     
-    <div class="workArea">
+    <div class="workArea" style="background-color: {{ getNoteColor(note) }};">
         <div class="title">
             <input type="text" placeholder="Title" ng-model="note.title">
         </div>
@@ -16,6 +21,30 @@
         
         <div class="text">
             <input type="text" placeholder="Text" ng-model="note.text">
+        </div>
+    </div>
+    
+    <div data-ui-content-for="modals">
+        <div class="modal colorPicker" data-ui-if="colorPickerState" data-ui-state="colorPickerState">
+            <div class="modal-backdrop in" data-ui-turn-off="colorPickerState"></div>
+            
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <span>Note color</span>
+                    </div>
+                    
+                    <div class="modal-body">
+                        <div class="colorPalette">
+                            <div class="color {{ getNoteColor() === color.value ? 'selected' : '' }}" 
+                                 style="background-color: {{ color.value }}"
+                                 ng-repeat="color in availableColors"
+                                 ng-click="pickColor(color)" data-ui-turn-off="colorPickerState">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
     

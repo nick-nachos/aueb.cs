@@ -39,6 +39,7 @@
     
     var app = angular.module('gr.aueb.cs.foss.notes', [
         'ngRoute',
+        'mobile-angular-ui.components',
         'mobile-angular-ui.gestures',
         moduleControllers.name,
         moduleDirectivesGestures.name

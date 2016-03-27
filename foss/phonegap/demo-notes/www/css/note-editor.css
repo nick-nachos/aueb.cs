@@ -1,6 +1,14 @@
 
-div.noteEditor > div.toolbar > div.section > div.tool.icon.back {
+div.noteEditor > div.toolbar div {
+    background-color: transparent;
+}
+
+div.noteEditor > div.toolbar > div.section.left > div.tool.icon.back {
     background-image: url(../img/navigation/ic_arrow_back_24px.svg);
+}
+
+div.noteEditor > div.toolbar > div.section.right div.tool.icon.buttonColorPicker {
+    background-image: url(../img/image/ic_palette_48px.svg);
 }
 
 div.noteEditor > div.workArea {
@@ -11,4 +19,41 @@ div.noteEditor > div.workArea {
     bottom: 0px;
     
     padding: 23px;
+}
+
+div.modal.colorPicker div.modal-dialog {
+    margin-left: calc(50% - 150px);
+    margin-right: calc(50% - 150px);
+}
+
+div.modal.colorPicker div.modal-dialog div.modal-header {
+    font-size: large;
+    font-weight: bold;
+}
+
+div.modal.colorPicker div.modal-dialog div.modal-body {
+    text-align: center;
+}
+
+div.modal.colorPicker div.modal-dialog div.modal-body div.colorPalette {
+    display: inline-block;
+    width: 200px;
+    height: 100px;
+}
+
+div.modal.colorPicker div.modal-dialog div.modal-body div.colorPalette > div.color {
+    width: 40px;
+    height: 40px;
+    margin: 5px;
+    float: left;
+    border-radius: 50%;
+    border: 1px solid rgba(0,0,0,0.14);
+    background-clip: padding-box;
+}
+
+div.modal.colorPicker div.modal-dialog div.modal-body div.colorPalette > div.color.selected {
+    background-position: center;
+    background-size: 24px 24px;
+    background-repeat: no-repeat;
+    background-image: url(../img/navigation/ic_check_24px.svg);
 }

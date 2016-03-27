@@ -4,9 +4,9 @@
 
     angular.module('gr.aueb.cs.foss.notes.controllers').controller('noteListController', [
         
-        '$scope', '$location', 'noteDataService', 'userPreferences', 'messageBox', 'orientation', 'appNavigator', 'arrayUtil',
+        '$scope', '$location', 'noteDataService', 'noteHelper', 'userPreferences', 'messageBox', 'orientation', 'appNavigator', 'arrayUtil',
         
-        function($scope, $location, noteDataService, userPreferences, messageBox, orientation, appNavigator, arrayUtil) {
+        function($scope, $location, noteDataService, noteHelper, userPreferences, messageBox, orientation, appNavigator, arrayUtil) {
             
             $scope.activateSearchBar = function() {
                 $scope.searchBarActive = true;
@@ -32,6 +32,10 @@
             
             $scope.containsNote = function(note, noteIndex, noteColumnIndex) {
                 return noteIndex % $scope.noteColumnIndices.length === noteColumnIndex;
+            };
+            
+            $scope.getNoteColor = function(note) {
+                return noteHelper.getColor(note);
             };
             
             $scope.loadNotes = function() {

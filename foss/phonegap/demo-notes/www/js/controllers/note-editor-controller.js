@@ -4,9 +4,33 @@
 
     angular.module('gr.aueb.cs.foss.notes.controllers').controller('noteEditorController', [
         
-        '$scope', '$routeParams', '$location', 'noteDataService', 'messageBox', 'noteHelper', 'appNavigator', 'objectUtil',
+        '$scope', '$routeParams', '$location', 'noteDataService', 'noteHelper', 'messageBox', 'appNavigator', 'objectUtil',
         
-        function($scope, $routeParams, $location, noteDataService, messageBox, noteHelper, appNavigator, objectUtil) {
+        function($scope, $routeParams, $location, noteDataService, noteHelper, messageBox, appNavigator, objectUtil) {
+            
+            $scope.getNoteColor = function() {
+                if (objectUtil.isNull($scope.note)) {
+                    return null;
+                }
+                
+                return noteHelper.getColor($scope.note);
+            };
+            
+            $scope.pickColor = function(color) {
+                $scope.note.color = color.value;
+            };
+            
+            $scope.getNote = function() {
+                if ($scope.isNewNote()) {
+                    $scope.onGetNoteSuccess({
+                        title: null,
+                        text: null
+                    });
+                }
+                else {
+                    noteDataService.getNoteById($routeParams.noteId).then($scope.onGetNoteSuccess, $scope.onGetNoteError);
+                }
+            };
             
             $scope.onGetNoteSuccess = function(note) {
                 $scope.note = note;
@@ -36,17 +60,14 @@
                 return objectUtil.isNull($routeParams.noteId);
             };
             
-            appNavigator.setBackAction($scope.close);
+            $scope.createColorPickerState = function() {
+                $scope.availableColors = noteHelper.listAvailableColors();
+            };
             
-            if ($scope.isNewNote()) {
-                $scope.onGetNoteSuccess({
-                    title: null,
-                    text: null
-                });
-            }
-            else {
-                noteDataService.getNoteById($routeParams.noteId).then($scope.onGetNoteSuccess, $scope.onGetNoteError);
-            }
+            appNavigator.setBackAction($scope.close);
+            $scope.getNote();
+            $scope.createColorPickerState();
+            
         }
     ]);
     

@@ -12,6 +12,7 @@ div.page {
 
 input[type = text] {
     border: none;
+    background-color: transparent;
 }
 
 input[type = text]:focus {

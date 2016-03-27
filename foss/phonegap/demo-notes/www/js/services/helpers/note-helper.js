@@ -4,9 +4,9 @@
     
     angular.module('gr.aueb.cs.foss.notes.services.helpers').factory('noteHelper', [
         
-        'stringUtil',
+        'objectUtil', 'stringUtil',
         
-        function(stringUtil) {
+        function(objectUtil, stringUtil) {
             
             function NoteHelper() { }
             
@@ -16,6 +16,23 @@
                 }
                 
                 return stringUtil.isBlank(note.text);
+            };
+            
+            NoteHelper.prototype.getColor = function(note) {
+                return objectUtil.isNull(note.color) ? 'rgb(255, 255, 255)' : note.color;
+            };
+            
+            NoteHelper.prototype.listAvailableColors = function() {
+                return [
+                    { id: 'white', value: 'rgb(255, 255, 255)' },
+                    { id: 'red', value: 'rgb(255, 138, 128)' },
+                    { id: 'orange', value: 'rgb(255, 209, 128)' },
+                    { id: 'yellow', value: 'rgb(255, 255, 141)' },
+                    { id: 'gray', value: 'rgb(207, 216, 220)' },
+                    { id: 'blue', value: 'rgb(128, 216, 255)' },
+                    { id: 'teal', value: 'rgb(167, 255, 235)' },
+                    { id: 'green', value: 'rgb(204, 255, 144)' }
+                ];
             };
             
             return new NoteHelper();
