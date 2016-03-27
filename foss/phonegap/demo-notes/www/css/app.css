@@ -18,7 +18,7 @@ div.noteList > div.appBar {
     left: 0px;
     right: 0px;
     display: table;
-    height: 40px;
+    height: 50px;
     width: 100%;
 }
 
@@ -63,7 +63,7 @@ div.noteList > div.searchBar {
     top: 0px;
     left: 0px;
     right: 0px;
-    height: 40px;
+    height: 50px;
     display: table;
     width: 100%;
     background-color: white;
@@ -78,10 +78,11 @@ div.noteList > div.searchBar > div {
 div.noteList > div.searchBar > div > div {
     display: table-cell;
     vertical-align: middle;
+    height: 40px;
 }
 
 div.noteList > div.searchBar > div > div.back {
-    height: 30px;
+    height: 40px;
     width: 30px;
     background-position: center;
     background-size: 20px 20px;
@@ -89,14 +90,19 @@ div.noteList > div.searchBar > div > div.back {
     background-image: url(../img/navigation/ic_arrow_back_24px.svg);
 }
 
-div.noteList > div.searchBar > div > div.input {
+div.noteList > div.searchBar > div > div.search {
     width: calc(100% - 30px);
 }
 
-div.noteList > div.searchBar > div > div.input > input {
+div.noteList > div.searchBar > div > div.search > .input {
     width: calc(100% - 15px);
     margin-left: 5px;
-    margin-right: 7px; 
+    margin-right: 7px;
+    border: none;
+}
+
+div.noteList > div.searchBar > div > div.search > .input:focus {
+    outline: none;
 }
 
 div.noteList > div.toolbar {
@@ -104,7 +110,7 @@ div.noteList > div.toolbar {
     bottom: 0px;
     left: 0px;
     right: 0px;
-    height: 30px;
+    height: 45px;
     display: table;
     width: 100%;
     padding-left: 10px;
@@ -124,16 +130,19 @@ div.noteList > div.noteContainer {
     position: absolute;
     left: 0px;
     right: 0px;
-    top: 40px;
-    bottom: 30px;
+    top: 50px;
+    bottom: 45px;
     overflow-y: auto;
+    background-color: #e8e8e8;
 }
 
 div.noteList > div.noteContainer  div.note {
     margin: 5px;
     padding: 3px;
-    border: 1px solid gainsboro;
-    border-radius: 5px;
+    
+    background-color: white;
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14),0 3px 1px -2px rgba(0,0,0,0.2),0 1px 5px 0 rgba(0,0,0,0.12);
+    border-radius: 2px;
     
     min-height: 130px;
     max-height: 250px;
