@@ -151,22 +151,6 @@ div.noteList > div.noteContainer.mosaic > div.noteColumn > div.note > div.title 
     text-overflow: ellipsis;
 }
 
-@media (orientation: landscape) {
-    
-    div.noteList > div.noteContainer.mosaic > div.noteColumn {
-        width: 33.33%;
-    }
-    
-}
-
-@media (orientation: portrait) {
-    
-    div.noteList > div.noteContainer.mosaic > div.noteColumn {
-        width: 50%;
-    }
-    
-}
-
 /* note editor */
 
 div.noteEditor > div.toolbar {

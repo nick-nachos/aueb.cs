@@ -21,7 +21,8 @@
     </div>
     
     <div class="noteContainer mosaic" ng-if="mosaicDisplay">
-        <div class="noteColumn dismissContainer" ng-repeat="noteColumnIndex in noteColumnIndices">
+        <div class="noteColumn dismissContainer" ng-repeat="noteColumnIndex in noteColumnIndices"
+             style="width: {{ 100.0 / noteColumnIndices.length }}%;">
             <div class="note" ng-repeat="note in notes | filter:searchText track by $index" 
                  ng-if="containsNote(note, $index, noteColumnIndex)"
                  data-touch="editNote(note)" data-drag-to-dismiss="deleteNote(note)">
