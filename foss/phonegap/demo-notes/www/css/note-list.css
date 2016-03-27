@@ -79,6 +79,10 @@ div.noteList > div.noteContainer  div.note {
     overflow: hidden;
 }
 
+div.noteList > div.noteContainer  div.note > div.text {
+    white-space: pre-wrap;
+}
+
 div.noteList > div.noteContainer.mosaic > div.noteColumn {
     float: left;
 }
