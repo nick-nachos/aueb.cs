@@ -87,4 +87,5 @@ div.noteList > div.noteContainer.mosaic > div.noteColumn > div.note > div.title 
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    font-weight: bold;
 }

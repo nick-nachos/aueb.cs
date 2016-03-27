@@ -21,6 +21,10 @@ div.noteEditor > div.workArea {
     padding: 23px;
 }
 
+div.noteEditor > div.workArea > div.title {
+    font-weight: bold;
+}
+
 div.modal.colorPicker div.modal-dialog {
     margin-left: calc(50% - 150px);
     margin-right: calc(50% - 150px);
