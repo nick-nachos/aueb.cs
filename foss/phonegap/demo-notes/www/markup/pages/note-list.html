@@ -25,7 +25,7 @@
     <div class="noteContainer mosaic" ng-if="mosaicDisplay">
         <div class="noteColumn dismissContainer" ng-repeat="noteColumnIndex in noteColumnIndices"
              style="width: {{ 100.0 / noteColumnIndices.length }}%;">
-            <div class="note" ng-repeat="note in notes | filter:searchText track by $index"
+            <div class="note" ng-repeat="note in notes | filter:searchMatcher track by $index"
                  style="background-color: {{ getNoteColor(note) }};"
                  ng-if="containsNote(note, $index, noteColumnIndex)"
                  data-touch="editNote(note)" data-drag-to-dismiss="deleteNote(note)">
@@ -36,7 +36,7 @@
     </div>
     
     <div class="noteContainer listView" ng-if="!mosaicDisplay">
-        <div class="note" ng-repeat="note in notes | filter:searchText"
+        <div class="note" ng-repeat="note in notes | filter:searchText:searchMatcher"
              style="background-color: {{ getNoteColor(note) }};"
              data-touch="editNote(note)" data-drag-to-dismiss="deleteNote(note)">
             <div class="title">{{ note.title }}</div>

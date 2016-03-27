@@ -22,6 +22,22 @@
                 return objectUtil.isNull(note.color) ? 'rgb(255, 255, 255)' : note.color;
             };
             
+            NoteHelper.prototype.containsText = function(note, text) {
+                if (stringUtil.isBlank(text)) {
+                    return true;
+                }
+                
+                if (stringUtil.contains(note.title, text, true)) {
+                    return true;
+                }
+                
+                if (stringUtil.contains(note.text, text, true)) {
+                    return true;
+                }
+                
+                return false;
+            };
+            
             NoteHelper.prototype.listAvailableColors = function() {
                 return [
                     { id: 'white', value: 'rgb(255, 255, 255)' },

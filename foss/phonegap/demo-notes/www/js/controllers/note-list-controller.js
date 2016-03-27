@@ -34,6 +34,10 @@
                 return noteIndex % $scope.noteColumnIndices.length === noteColumnIndex;
             };
             
+            $scope.searchMatcher = function(note) {
+                return noteHelper.containsText(note, $scope.searchText);
+            };
+            
             $scope.getNoteColor = function(note) {
                 return noteHelper.getColor(note);
             };
