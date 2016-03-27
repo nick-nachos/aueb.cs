@@ -4,6 +4,10 @@
     
     var moduleUtil = angular.module('gr.aueb.cs.foss.notes.util', []);
     
+    var moduleHelper = angular.module('gr.aueb.cs.foss.notes.services.helpers', [
+        moduleUtil.name
+    ]);
+    
     var moduleDal = angular.module('gr.aueb.cs.foss.notes.dal', [
         moduleUtil.name
     ]);
@@ -22,6 +26,8 @@
     ]);
     
     var moduleControllers = angular.module('gr.aueb.cs.foss.notes.controllers', [
+        moduleUtil.name,
+        moduleHelper.name,
         moduleServicesData.name,
         moduleServicesUI.name
     ]);

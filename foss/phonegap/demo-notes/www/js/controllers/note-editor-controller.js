@@ -4,23 +4,21 @@
 
     angular.module('gr.aueb.cs.foss.notes.controllers').controller('noteEditorController', [
         
-        '$scope', '$routeParams', '$location', 'noteDataService', 'messageBox', 'objectUtil',
+        '$scope', '$routeParams', '$location', 'noteDataService', 'messageBox', 'noteHelper', 'objectUtil',
         
-        function($scope, $routeParams, $location, noteDataService, messageBox, objectUtil) {
+        function($scope, $routeParams, $location, noteDataService, messageBox, noteHelper, objectUtil) {
             
             $scope.onGetNoteSuccess = function(note) {
                 $scope.note = note;
-                $scope.initSuccess = true;
             };
             
             $scope.onGetNoteError = function() {
                 $scope.note = { };
-                $scope.initSuccess = false;
-                messageBox.alert('Failed to get note data, please try again later.');
+                messageBox.alert('Failed to get note data, please try again later.').then($scope.goBack);
             };
             
             $scope.close = function() {
-                if ($scope.initSuccess) {
+                if (!$scope.isNewNote() || !noteHelper.isEmpty($scope.note)) {
                     noteDataService.saveNote($scope.note).then(function() {
                         $scope.goBack();
                     });
@@ -34,7 +32,11 @@
                 $location.url('/notes');
             };
             
-            if (objectUtil.isNull($routeParams.noteId)) {
+            $scope.isNewNote = function() {
+                return objectUtil.isNull($routeParams.noteId);
+            };
+            
+            if ($scope.isNewNote()) {
                 $scope.onGetNoteSuccess({
                     title: null,
                     text: null
