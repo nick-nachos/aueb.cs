@@ -53,7 +53,6 @@
             
             appNavigator.setBackAction(angular.noop, true);
             $scope.mosaicDisplay = userPreferences.isNoteViewMosaic();
-            //$scope.search = { text: null };
             $scope.loadNotes();
             $scope.onOrientationChange();
             orientation.addOrientationListener($scope.onOrientationChange);
