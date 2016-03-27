@@ -10,12 +10,10 @@ div.page {
     height: 100%;
 }
 
-input[type = text] {
+input[type = text],
+textarea {
     border: none;
     background-color: transparent;
-}
-
-input[type = text]:focus {
     outline: none;
 }
 

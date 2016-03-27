@@ -41,6 +41,7 @@
         'ngRoute',
         'mobile-angular-ui.components',
         'mobile-angular-ui.gestures',
+        'monospaced.elastic',
         moduleControllers.name,
         moduleDirectivesGestures.name
     ]);

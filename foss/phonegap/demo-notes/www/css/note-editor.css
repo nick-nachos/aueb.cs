@@ -19,10 +19,16 @@ div.noteEditor > div.workArea {
     bottom: 0px;
     
     padding: 23px;
+    
+    overflow-y: auto;
 }
 
 div.noteEditor > div.workArea > div.title {
     font-weight: bold;
+}
+
+div.noteEditor > div.workArea > div.text > * {
+    width: 100%;
 }
 
 div.modal.colorPicker div.modal-dialog {
