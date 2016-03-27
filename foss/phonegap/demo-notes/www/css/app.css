@@ -9,3 +9,57 @@ div.page {
     width: 100%;
     height: 100%;
 }
+
+input[type = text] {
+    border: none;
+}
+
+input[type = text]:focus {
+    outline: none;
+}
+
+div.toolbar {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    right: 0px;
+    
+    display: table;
+    
+    height: 50px;
+    width: 100%;
+}
+
+div.toolbar > div.section {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+div.toolbar > div.section.left {
+    width: 40%;
+    padding-left: 10px;
+}
+
+div.toolbar > div.section.right {
+    width: 60%;
+    padding-right: 10px;
+}
+
+div.toolbar > div.section.right > div.rightAligner {
+    float: right;
+    display: table;
+}
+
+div.toolbar > div.section div.tool {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+div.toolbar > div.section div.tool.icon {
+    height: 30px;
+    width: 40px;
+    
+    background-position: center;
+    background-size: 20px 20px;
+    background-repeat: no-repeat;
+}

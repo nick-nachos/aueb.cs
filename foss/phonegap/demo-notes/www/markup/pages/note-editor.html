@@ -2,16 +2,20 @@
 <div class="noteEditor">
     
     <div class="toolbar">
-        <a class="buttonBack" href="" ng-click="close()">Back</a>
+        <div class="section left">
+            <div class="tool icon back" ng-click="close()"></div>
+        </div>
     </div>
     
     <div class="workArea">
         <div class="title">
-            <input type="text" ng-model="note.title">
+            <input type="text" placeholder="Title" ng-model="note.title">
         </div>
 
+        <br>
+        
         <div class="text">
-            <input type="text" ng-model="note.text">
+            <input type="text" placeholder="Text" ng-model="note.text">
         </div>
     </div>
     

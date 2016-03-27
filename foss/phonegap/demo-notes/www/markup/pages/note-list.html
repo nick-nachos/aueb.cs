@@ -1,25 +1,27 @@
 
 <div class="noteList" ng-controller="noteListController">
     
-    <div class="appBar">
-        <div class="appName">Notes</div>
-        <div class="appTools">
-            <div style="float: right">
-                <div class="buttonSearch" ng-click="activateSearchBar()"></div>
-                <div class="toggleListType {{ mosaicDisplay ? 'toListView' : 'toMosaic' }}" ng-click="toggleListType()"></div>
+    <div class="toolbar header">
+        <div class="section left">
+            <div class="appName">Notes</div>
+        </div>
+        <div class="section right">
+            <div class="rightAligner">
+                <div class="tool icon buttonSearch" ng-click="activateSearchBar()"></div>
+                <div class="tool icon toggleListType {{ mosaicDisplay ? 'toListView' : 'toMosaic' }}" ng-click="toggleListType()"></div>
             </div>
         </div>
     </div>
     
-    <div class="searchBar" ng-if="searchBarActive">
-        <div>
-            <div class="back" ng-click="deactivateSearchBar()"></div>
-            <div class="search">
+    <div class="toolbar search" ng-if="searchBarActive">
+        <div class="section left right">
+            <div class="tool icon back" ng-click="deactivateSearchBar()"></div>
+            <div class="tool search">
                 <input class="input" type="text" placeholder="Search notes" ng-model="$parent.searchText">
             </div>
         </div>
     </div>
-    
+
     <div class="noteContainer mosaic" ng-if="mosaicDisplay">
         <div class="noteColumn dismissContainer" ng-repeat="noteColumnIndex in noteColumnIndices"
              style="width: {{ 100.0 / noteColumnIndices.length }}%;">
@@ -40,9 +42,11 @@
         </div>
     </div>
     
-    <div class="toolbar">
-        <div class="buttonNew">
-            <a href="#/notes/new">New note...</a>
+    <div class="toolbar footer">
+        <div class="section left">
+            <div class="tool buttonNew">
+                <a href="#/notes/new">New note...</a>
+            </div>
         </div>
     </div>
     
