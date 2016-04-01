@@ -9,9 +9,10 @@ First, setup the basic development tools required:
 1. Download and install [git], then add it to your PATH
 2. Download and install [Node.js], then add it to your PATH
 3. Install cordova:
-```sh
-$ npm install -g cordova
-```
+    ```sh
+    $ npm install -g cordova
+    ```
+
 Then you will need to install the platform specific tools/APIs in order to be able to build and deploy to your device (Android/iOS)
 
 For Android:
@@ -28,29 +29,30 @@ For iOS (applicable only to OSX platforms):
 
 1. Download and install [Xcode]
 2. Install node module ios-deploy, which allows for device deployment of cordova apps
-```sh
-$ npm install -g ios-deploy
-```
+    ```sh
+    $ npm install -g ios-deploy
+    ```
 
 ## Build instructions
 
 1. Clone this repository to your local machine
-```sh
-$ git clone https://github.com/nick-nachos/aueb.cs.git
-```
+    ```sh
+    $ git clone https://github.com/nick-nachos/aueb.cs.git
+    ```
 2. Open a terminal in the directory [aueb.cs.git]/foss/phonegap/demo-notes
 3. Install web project dependencies:
-```sh
-$ npm install
-```
+    ```sh
+    $ npm install
+    ```
 4. Add the desired target platform (android/ios) to your cordova project
-```sh
-$ cordova platform add <platform_name>
-```
+    ```sh
+    $ cordova platform add <platform_name>
+    ```
 5. Build the platform (android/ios) to check that everything went OK
-```sh
-$ cordova build <platform_name> --debug
-```
+    ```sh
+    $ cordova build <platform_name> --debug
+    ```
+
 ## Deploy on device
 
 If build was OK, then:
@@ -58,9 +60,9 @@ If build was OK, then:
 1. Connect your device to your computer via USB cable
     * Make sure for Android devices that you have enabled USB debugging from your phone's developer options.
 2. Run the following command from a terminal within the [aueb.cs.git]/foss/phonegap/demo-notes directory:
-```sh
-$ cordova run <platform_name> --device
-```
+    ```sh
+    $ cordova run <platform_name> --device
+    ```
 
 Enjoy!
 
