@@ -16,9 +16,9 @@ First, setup the basic development tools required:
 
 Then you will need to install the platform specific tools/APIs in order to be able to build and deploy to your device (Android/iOS)
 
-For Android:
+##### Android
 
-1. Download and install the [android sdk]. You don't need to download Android Studio, the standalone API will suffice.
+1. Download and install the [Android SDK]. You don't need to download Android Studio, the standalone API will suffice.
 2. Create the environment variable ANDROID_HOME and assign it to the path of the Android SDK folder
 3. Run the Android SDK Manager ([sdk-home]/tools/android) and install:
     * Android SDK tools
@@ -26,10 +26,10 @@ For Android:
     * The Android API image used by cordova build (at the time of writing, cordova 6.0.0, which is the latest version, makes use of Android 6.0 (API 23)
     * Add [sdk-home]/tools and  [sdk-home]/platform-tools to your PATH
     
-For iOS (applicable only to OSX platforms):
+##### iOS _(applicable only to OSX platforms)_
 
 1. Download and install [Xcode]
-2. Install node module ios-deploy, which allows for device deployment of cordova apps
+2. Install node module [ios-deploy], which allows for device deployment of cordova apps
 
     ```sh
     $ npm install -g ios-deploy
@@ -78,5 +78,7 @@ Enjoy!
 
 [Node.js]: <https://nodejs.org/en/download/>
 [git]: <https://git-scm.com/downloads>
-[android sdk]: <http://developer.android.com/sdk/installing/index.html>
+[Android SDK]: <http://developer.android.com/sdk/installing/index.html>
 [Xcode]: <https://developer.apple.com/xcode/download/>
+[ios-deploy]: <https://github.com/phonegap/ios-deploy>
+
