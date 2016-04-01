@@ -38,7 +38,7 @@ $ npm install -g ios-deploy
 ```sh
 $ git clone https://github.com/nick-nachos/aueb.cs.git
 ```
-2. Open a terminal in the directory <aueb.cs.git>/foss/phonegap/demo-notes
+2. Open a terminal in the directory [aueb.cs.git]/foss/phonegap/demo-notes
 3. Install web project dependencies:
 ```sh
 $ npm install
@@ -57,11 +57,12 @@ If build was OK, then:
 
 1. Connect your device to your computer via USB cable
     * Make sure for Android devices that you have enabled USB debugging from your phone's developer options.
-2. Run the following command from a terminal within the <aueb.cs.git>/foss/phonegap/demo-notes directory:
+2. Run the following command from a terminal within the [aueb.cs.git]/foss/phonegap/demo-notes directory:
 ```sh
 $ cordova run <platform_name> --device
 ```
-3. Enjoy!
+
+Enjoy!
 
 [Node.js]: <https://nodejs.org/en/download/>
 [git]: <https://git-scm.com/downloads>
