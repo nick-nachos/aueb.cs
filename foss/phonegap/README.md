@@ -23,6 +23,7 @@ Then you will need to install the platform specific tools/APIs in order to be ab
 3. Run the Android SDK Manager ([sdk-home]/tools/android) and install:
     * Android SDK tools
     * Android SDK platform tools
+    * Android SDK build tools
     * The Android API image used by cordova build (at the time of writing, cordova 6.0.0, which is the latest version, makes use of Android 6.0 (API 23)
     * Add [sdk-home]/tools and  [sdk-home]/platform-tools to your PATH
     
