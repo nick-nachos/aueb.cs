@@ -32,26 +32,32 @@ div.noteEditor > div.workArea > div.text > * {
 }
 
 div.modal.colorPicker div.modal-dialog {
-    margin-left: calc(50% - 150px);
-    margin-right: calc(50% - 150px);
+    position: fixed;
+    top: calc(50% - 100px);
+    margin-left: calc(50% - 125px);
+    margin-right: calc(50% - 125px);
 }
 
-div.modal.colorPicker div.modal-dialog div.modal-header {
+div.modal.colorPicker div.modal-dialog div.modal-content {
+    width: 250px;
+}
+
+div.modal.colorPicker div.modal-dialog div.modal-content div.modal-header {
     font-size: large;
     font-weight: bold;
 }
 
-div.modal.colorPicker div.modal-dialog div.modal-body {
+div.modal.colorPicker div.modal-dialog div.modal-content div.modal-body {
     text-align: center;
 }
 
-div.modal.colorPicker div.modal-dialog div.modal-body div.colorPalette {
+div.modal.colorPicker div.modal-dialog div.modal-content div.modal-body div.colorPalette {
     display: inline-block;
     width: 200px;
     height: 100px;
 }
 
-div.modal.colorPicker div.modal-dialog div.modal-body div.colorPalette > div.color {
+div.modal.colorPicker div.modal-dialog div.modal-content div.modal-body div.colorPalette > div.color {
     width: 40px;
     height: 40px;
     margin: 5px;
@@ -61,7 +67,7 @@ div.modal.colorPicker div.modal-dialog div.modal-body div.colorPalette > div.col
     background-clip: padding-box;
 }
 
-div.modal.colorPicker div.modal-dialog div.modal-body div.colorPalette > div.color.selected {
+div.modal.colorPicker div.modal-dialog div.modal-content div.modal-body div.colorPalette > div.color.selected {
     background-position: center;
     background-size: 24px 24px;
     background-repeat: no-repeat;
